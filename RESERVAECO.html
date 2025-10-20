@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcoAventuras - Reservas</title>
+  <style>
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: white;
+      position: relative;
+      z-index: 0;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-container img {
+      height: 50px;
+    }
+
+    .logo-container .center-text {
+      font-family: 'Luckiest Guy', serif;
+      font-size: 40px;
+      font-weight: bold;
+      background: linear-gradient(to right, #1EADF0, #0AFB60);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0px 0px 20px rgba(0,255,100,0.8);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      text-shadow: 0px 0px 8px black;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Luckiest Guy', serif;
+      font-size: 60px;
+      margin-bottom: 20px;
+      font-weight: 900;
+      background: linear-gradient(to right, #FF4E50, #FC913A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 25px rgba(0,0,0,0.8);
+    }
+
+    p.subtitle {
+      font-family: 'Luckiest Guy', serif;
+      font-size: 30px;
+      margin-bottom: 40px;
+      font-weight: 900;
+      background: linear-gradient(to right, #00FF5B, #0014FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 18px rgba(0,0,0,0.9);
+    }
+
+    form {
+      background: rgba(0,0,0,0.7);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ff88;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #00ffcc;
+      text-shadow: 0 0 8px black;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background: linear-gradient(to right, #1EADF0, #0AFB60);
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 12px #0AFB60;
+    }
+
+    input[type="submit"]:hover {
+      background: linear-gradient(to right, #0AFB60, #1EADF0);
+      box-shadow: 0 0 20px #1EADF0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: url('PORTADAECO.jpg') no-repeat center center/cover;
+      opacity: 0.35;
+      z-index: 0;
+      pointer-events: none;
+      filter: brightness(1.1);
+    }
+
+    .contenido-superior {
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="logo.jpg" alt="Logo EcoAventuras" />
+      <div class="center-text">ECOAVENTURA</div>
+    </div>
+    <nav>
+      <a href="PORTADAECO.html">INICIO</a>
+      <a href="ACTIVIDADESECO.html">DINAMICAS</a>
+      <a href="RESERVAECO.html">RESERVAS</a>
+      <a href="PROMOCIONESECO.html">PROMOCIONES</a>
+      <a href="HISTORIASECO.html">HISTORIA</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1> RESERVA TU AVENTURA </h1>
+    <p class="subtitle">Vive la experiencia única en EcoAventura</p>
+<form id="formReserva" action="https://script.google.com/macros/s/AKfycbznGQkxMEtAeiTLtuG3BrydF23NBJfXHJnApSTwaxu1pkJ8wsleiMfWdHwRXbZXIFt3/exec" method="post">
+  <label for="nombre">Nombre Completo:</label>
+  <input type="text" id="nombre" name="nombre" required />
+
+  <label for="email">Correo Electrónico:</label>
+  <input type="email" id="email" name="email" required />
+
+  <label for="fecha">Fecha de la Visita:</label>
+  <input type="date" id="fecha" name="fecha" required />
+
+  <label for="personas">Número de Personas:</label>
+  <input type="number" id="personas" name="personas" min="1" required />
+
+  <label for="actividad">Actividad:</label>
+  <select id="actividad" name="actividad">
+    <option value="paseo_caballo">Paseo en Caballo</option>
+  <option value="voleibol_arena">Voleibol en Arena</option>
+  <option value="area_picnic">Área de Picnic</option>
+  <option value="laguna_artificial">Laguna Artificial</option>
+  <option value="cancha_cesped">Cancha de Césped</option>
+  <option value="golf">Golf</option>
+  </select>
+
+  <input type="submit" value="Reservar Ahora" />
+</form>
+
+<script>
+document.getElementById("formReserva").addEventListener("submit", function(event) {
+  event.preventDefault(); // Evita recargar la página
+
+  const form = event.target;
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+    method: "POST",
+    body: formData
+  })
+  .then(response => response.text())
+  .then(() => {
+    alert("✅ Tu reserva fue enviada correctamente.");
+    form.reset(); // Limpia los campos
+  })
+  .catch(() => {
+    alert("❌ Ocurrió un error al enviar. Inténtalo de nuevo.");
+  });
+});
+</script>
+    
+</body>
+</html>

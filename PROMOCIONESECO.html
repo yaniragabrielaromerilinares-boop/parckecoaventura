@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoAventuras - Promociones</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: white;
+      position: relative;
+      z-index: 0;
+    }
+
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('PORTADAECO.jpg') no-repeat center center/cover;
+      opacity: 0.35;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-container img {
+      height: 50px;
+    }
+
+    .logo-container .center-text {
+      font-family: 'Luckiest Guy', serif;
+      font-size: 40px;
+      font-weight: bold;
+      background: linear-gradient(to right, #1EADF0, #0AFB60);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0px 0px 20px rgba(0,255,100,0.8);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      text-shadow: 0px 0px 8px black;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Luckiest Guy', serif;
+      font-size: 67px;
+      margin-bottom: 10px;
+      font-weight: 900;
+      background: linear-gradient(to right, #FF4E50, #FC913A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 25px rgba(0,0,0,0.8);
+    }
+
+    p.subtitle {
+      font-family: 'Luckiest Guy', serif;
+      font-size: 30px;
+      margin-bottom: 40px;
+      font-weight: 900;
+      background: linear-gradient(to right, #00FF5B, #33A9A0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 18px rgba(0,0,0,0.9);
+    }
+
+    .promociones {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+    }
+
+    .promo-card {
+      position: relative;
+      width: 300px;
+      height: 350px;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #00ff66;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .promo-card:hover {
+      transform: scale(1.03);
+    }
+
+    .promo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .promo-content {
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 40px;
+      transition: bottom 0.4s ease;
+      text-align: center;
+      height: 100%;
+    }
+
+    .promo-card:hover .promo-content {
+      bottom: 0;
+    }
+
+    .promo-content h3 {
+      font-family: 'Luckiest Guy', serif;
+      font-size: 40px;
+      margin-bottom: 10px;
+      color: #00ffcc;
+    }
+
+    .promo-content p {
+      font-size: 20px;
+      line-height: 1.5;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <img src="logo.jpg" alt="Logo EcoAventuras">
+    <div class="center-text">ECOAVENTURA</div>
+  </div>
+  <nav>
+    <a href="PORTADAECO.html">INICIO</a>
+    <a href="ACTIVIDADESECO.html">DINAMICAS</a>
+    <a href="RESERVAECO.html">RESERVAS</a>
+    <a href="PROMOCIONESECO.html">PROMOCIONES</a>
+    <a href="HISTORIASECO.html">HISTORIA</a>
+  </nav>
+</header>
+
+<main>
+  <h1> PROMOCIONES</h1>
+  <p class="subtitle">Aprovecha nuestras ofertas especiales en EcoAventura</p>
+
+  <div class="promociones">
+
+   
+    <div class="promo-card">
+      <img src="FAMILIA.jpg" alt="Descuento Familiar">
+      <div class="promo-content">
+        <h3> Descuento Familiar</h3>
+        <p>Trae a toda tu familia y recibe un <b>25% de descuento en</b> tu reserva. Disponible todos los fines de semana .</p>
+      </div>
+    </div>
+
+    
+    <div class="promo-card">
+      <img src="CUMPLE.jpg" alt="Cumpleaños Aventurero">
+      <div class="promo-content">
+        <h3> Cumpleaños Aventurero</h3>
+        <p>Si vienes a celebrar tu cumpleaños con nosotros, el cumpleañero <b>no paga</b>. Aplica con grupos de mínimo 5 personas.</p>
+      </div>
+    </div>
+
+   
+    <div class="promo-card">
+      <img src="GRUPO.jpg" alt="Grupo de Amigos">
+      <div class="promo-content">
+        <h3> Grupo de Amigos</h3>
+        <p>Arma tu grupo de 10 o más personas y obtén un <b>30% de descuento</b> en el paquete completo de actividades ecoaventureras.</p>
+      </div>
+    </div>
+    <div class="promo-card">
+      <img src="ESTUDIANTES.jpg" alt="Descuento Estudiantes">
+      <div class="promo-content">
+        <h3> Descuento a Estudiantes</h3>
+        <p>Presentando tu credencial estudiantil accede a precios reducidos en todas nuestras dinámicas.</p>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <img src="FESTEJO.jpg" alt="Festividades y Eventos">
+      <div class="promo-content">
+        <h3> Festividades y Eventos</h3>
+        <p>Aprovecha nuestros paquetes para festividades especiales, con actividades temáticas y sorpresas para todos.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>

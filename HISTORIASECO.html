@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcoAventuras - Historia</title>
+  <style>
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: white;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-container img {
+      height: 50px;
+    }
+
+    .logo-container .center-text {
+      font-family: 'Luckiest Guy', serif;
+      font-size: 40px;
+      font-weight: bold;
+      background: linear-gradient(to right, #1EADF0, #0AFB60);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0px 0px 15px darkgreen;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-family: 'Luckiest Guy', serif;
+      font-size: 67px;
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: 900;
+      background: linear-gradient(to right, #00FF5B, #33A9A0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      font-family: 'Luckiest Guy', serif;
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 40px;
+      font-weight: 900;
+      background: linear-gradient(to right, #f2994a, #48b1bf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .video-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      align-items: flex-start;
+      margin-top: 30px;
+    }
+
+    video {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00ff66;
+    }
+
+    .vision-mision {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 500px;
+    }
+
+    .card-vm {
+      background: rgba(0, 0, 0, 0.7);
+      border-left: 6px solid #00ff66;
+      padding: 20px;
+      box-shadow: 0 0 15px #00ff66;
+      animation: bounce 3s infinite;
+      width: 300px;
+      height: 300px;
+      border-radius: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card-vm h4 {
+      font-size: 28px;
+      color: #00ffcc;
+      margin-bottom: 10px;
+    }
+
+    .card-vm p {
+      font-size: 17px;
+      color: #ddd;
+      line-height: 1.6;
+    }
+
+    .organigrama {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 60px;
+    }
+
+    .persona {
+      border: 1px solid #004d00;
+      padding: 15px;
+      text-align: center;
+      width: 220px;
+      background: #111;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #004d00;
+      transition: transform 0.3s ease;
+      animation: pulse 4s infinite;
+    }
+
+    .persona:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ff00;
+    }
+
+    .persona img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #004d00;
+      margin-bottom: 12px;
+    }
+
+    .persona h4 {
+      color: #00ff66;
+      margin: 5px 0;
+    }
+
+    .persona p {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-20px); }
+      68% { transform: translateY(-10px); }
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('PORTADAECO.jpg') no-repeat center center/cover;
+      opacity: 0.35;
+      z-index: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="logo.jpg" alt="Logo EcoAventuras" />
+      <div class="center-text">ECOAVENTURA</div>
+    </div>
+    <nav>
+      <a href="PORTADAECO.html">INICIO</a>
+      <a href="ACTIVIDADESECO.html">DINAMICAS</a>
+      <a href="RESERVAECO.html">RESERVAS</a>
+      <a href="PROMOCIONESECO.html">PROMOCIONES</a>
+      <a href="HISTORIASECO.html">HISTORIA</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1> NUESTRA HISTORIA</h1>
+    <p class="subtitle">CONOCE EL CAMINO DE ECOAVENTURA</p>
+
+    <div class="video-container">
+      <video controls>
+        <source src="VIDEOECO.mp4" type="video/mp4" />
+        Tu navegador no soporta este video.
+      </video>
+
+      <div class="vision-mision">
+        <div class="card-vm">
+          <h4> Visión</h4>
+          <p>Ser el parque ecológico líder en experiencias de aventura y educación ambiental, promoviendo el respeto por la naturaleza.</p>
+        </div>
+        <div class="card-vm">
+          <h4> Misión</h4>
+          <p>Ofrecer actividades recreativas y educativas al aire libre, fomentando el cuidado del medio ambiente y la diversión en familia.</p>
+        </div>
+      </div>
+    </div>
+
+    <h1 style="font-size: 50px; margin-top: 60px;"> EQUIPO DE TRABAJO</h1>
+
+    <div class="organigrama">
+      <div class="persona">
+        <img src="DUEÑO.jpg" alt="Exequiel Achocalla" />
+        <h4>Exequiel Achocalla</h4>
+        <p>Gerente General - 45 años</p>
+      </div>
+      <div class="persona">
+        <img src="PERSONAL9.jpg" alt="Elizeth Maria Aguilar Chavez" />
+        <h4>Elizeth Maria Aguilar Chavez</h4>
+        <p>Recursos Humanos - 39 años</p>
+      </div>
+      <div class="persona">
+        <img src="PERSONAL2.jpg" alt="Helen Saravia Segales" />
+        <h4>Helen Saravia Segales</h4>
+        <p>Área Administrativa y Financiera - 34 años</p>
+      </div>
+      <div class="persona">
+        <img src="PERSONAL4.jpg" alt="Wilfredo Achocalla Cena" />
+        <h4>Wilfredo Achocalla Cena</h4>
+        <p>Marketing - 30 años</p>
+      </div>
+      <div class="persona">
+        <img src="PERSONAL8.jpg" alt="Mantenimiento" />
+        <h4>Elena Coro Perez</h4>
+        <p>Mantenimiento - 31 años</p>
+      </div>
+            <div class="persona">
+        <img src="PERSONAL3.jpg" alt="Seguridad" />
+        <h4>Elias Colque Flores</h4>
+        <p>Seguridad - 36 años</p>
+      </div>
+
+      <div class="persona">
+        <img src="PERSONAL6.jpg" alt="Contabilidad" />
+        <h4>Nataly Paco Alarcon</h4>
+        <p>Contabilidad - 32 años</p>
+      </div>
+
+      <div class="persona">
+        <img src="PERSONAL7.jpg" alt="Compras y Logística" />
+        <h4>Magdalena Montoya Mamani</h4>
+        <p>Compras y Logística - 30 años</p>
+      </div>
+
+      <div class="persona">
+        <img src="PERSONAL5.jpg" alt="Atención al Cliente" />
+        <h4>Victoria Montoya Quispe</h4>
+        <p>Atención al Cliente - 35 años</p>
+      </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+

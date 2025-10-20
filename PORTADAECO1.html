@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoAventuras</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: url('PORTADAECO.jpg') center/cover no-repeat;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.video-container {
+  position: absolute;
+  top: 1.5cm;
+  left: 1.5cm;
+  right: 1.5cm;
+  bottom: 1.5cm;
+  overflow: hidden;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+.overlay {
+  position: absolute;
+  top: 1.5cm;
+  left: 1.5cm;
+  right: 1.5cm;
+  bottom: 1.5cm;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.25);
+  z-index: 0;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.6);
+  z-index: 50;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-container img {
+  height: 50px;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+.logo-container .center-text {
+  font-family: 'Luckiest Guy', serif;
+  font-size: 40px;
+  font-weight: bold;
+  background: linear-gradient(to right, #1EADF0, #0AFB60);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 20px rgba(0,255,100,0.8);
+}
+
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 0 8px black;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+.center-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.55);
+  padding: 60px 270px;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 50;
+}
+
+.main-title {
+  font-size: clamp(40px, 6vw, 90px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.2;
+  text-shadow: none;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+  animation-delay: 1s;
+}
+
+.subtitle {
+  font-size: 24px;
+  color: white;
+  margin-top: 20px;
+  text-shadow: 0 0 5px #003300, 0 0 10px #003300;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+  animation-delay: 2s;
+}
+
+
+.horario {
+  margin-top: 25px;
+  background: linear-gradient(90deg, #00ff88, #00b8ff);
+  color: black;
+  font-weight: bold;
+  padding: 10px 25px;
+  border-radius: 30px;
+  display: inline-block;
+  box-shadow: 0 0 15px rgba(0,255,100,0.8);
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); box-shadow: 0 0 10px #00ff88; }
+  to { transform: scale(1.05); box-shadow: 0 0 20px #00b8ff; }
+}
+
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+.apps-right {
+  position: absolute;
+  top: 35%;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 50;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: 1s;
+}
+.apps-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.apps-right a {
+  font-size: 22px;
+  text-align: center;
+  padding: 16px;
+  border-radius: 50%;
+  text-decoration: none;
+  background: linear-gradient(135deg, #5A3E1B, #1EAD60);
+  color: black;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.apps-right a:hover {
+  filter: brightness(1.3);
+  transform: scale(1.1);
+}
+
+.ubicacion-section {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.ubicacion-section.active {
+  display: flex;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+iframe {
+  width: 90%;
+  height: 450px;
+  max-width: 900px;
+  border-radius: 20px;
+  border: none;
+  margin-bottom: 25px;
+  box-shadow: 0 0 20px #00ff99;
+}
+
+.btn-directions {
+  background: #00ff85;
+  color: black;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn-directions:hover {
+  background: #00b8ff;
+  color: white;
+}
+
+.close-map {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 10px;
+  transition: 0.3s;
+}
+.close-map:hover {
+  background: red;
+}
+
+
+@media (max-width:900px){
+  .main-title{font-size:50px;}
+}
+@media (max-width:600px){
+  .main-title{font-size:32px;}
+  .subtitle{font-size:18px;}
+  .logo-container .center-text{font-size:28px;}
+  nav a{font-size:14px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="video-container">
+  <video autoplay loop muted playsinline>
+    <source src="VIDEOA.mp4" type="video/mp4">
+    Tu navegador no soporta videos HTML5.
+  </video>
+</div>
+
+<div class="overlay"></div>
+
+<header>
+  <div class="logo-container">
+    <img src="logo.jpg" alt="Logo EcoAventuras" />
+    <div class="center-text">ECOAVENTURAS</div>
+  </div>
+  <nav>
+    <a href="PORTADAECO.html">INICIO</a>
+    <a href="ACTIVIDADESECO.html">DINAMICAS</a>
+    <a href="RESERVAECO.html">RESERVAS</a>
+    <a href="PROMOCIONESECO.html">PROMOCIONES</a>
+    <a href="HISTORIASECO.html">HISTORIA</a>
+  </nav>
+</header>
+
+<div class="center-box">
+  <div class="main-title">BIENVENIDOS <br> AL PARQUE ECOAVENTURAS</div>
+  <div class="subtitle">TU REFUGIO DE RECREACIÓN Y DESCANSO</div>
+  <div class="horario">Se abren los días domingos desde las 8:00 am hasta las 6:00 pm</div>
+</div>
+
+<div class="apps-right" id="appsMenu">
+  <a href="https://www.tiktok.com/@ecoaventura.71120567?_t=ZM-8xrow2lUvWX&_r=1 " target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+  <a href=" https://wa.me/qr/KZTGFXF5XPFHM1  " title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.facebook.com/share/173itYBUvu/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" id="openMap" title="Ubicación"><i class="fas fa-map-marker-alt"></i></a>
+</div>
+
+<div class="ubicacion-section" id="mapSection">
+  <button class="close-map" id="closeMap">&times;</button>
+  <h2>📍 Ubicación del Parque Sora - EcoAventuras</h2>
+  <div id="map">
+    <iframe
+      width="100%"
+      height="100%"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.2691808992373!2d-67.005156!3d-18.105544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDU3JzQ3LjkiUyA2N8KwMDUnMDAuOCJX!5e0!3m2!1ses!2sbo!4v1718309012345!5m2!1ses!2sbo"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  
+  <a class="btn-directions" href="https://www.google.com/maps/dir/?api=1&destination=-18.105544,-67.005156" target="_blank">
+    📍 Cómo llegar
+  </a>
+</div>
+
+<script>
+const appsMenu = document.getElementById('appsMenu');
+window.addEventListener('load', () => {
+  setTimeout(()=>{ appsMenu.classList.add('show'); }, 3000);
+});
+
+const mapBtn = document.getElementById('openMap');
+const mapSection = document.getElementById('mapSection');
+const closeMap = document.getElementById('closeMap');
+
+mapBtn.addEventListener('click', () => mapSection.classList.add('active'));
+closeMap.addEventListener('click', () => mapSection.classList.remove('active'));
+</script>
+
+</body>
+</html>
